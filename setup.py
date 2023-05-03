@@ -1,14 +1,8 @@
 from setuptools import setup,find_packages
-with open('README.md') as f:
-    readme=f.read()
-with open('LICENSE.txt') as f:
-    license=f.read()
 setup(
     name='puresnet',
     version='0.0.1',
     description='PUResNetV2.0 Prediction of Protein Ligand Binding Sites',
-    long_description=readme,
-    license=license.
     packages=find_packages(),
     install_requires=[
       'numpy'  
