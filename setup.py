@@ -8,8 +8,8 @@ setup(
     version='0.0.1',
     description='PUResNetV2.0 Prediction of Protein Ligand Binding Sites',
     long_description=long_description,
-    long_description_content_type='text/markdown'
-    license=license
+    long_description_content_type='text/markdown',
+    license=license,
     packages=find_packages(),
     install_requires=[
       'numpy'  
