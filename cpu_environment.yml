@@ -1,4 +1,4 @@
-name: puresnet
+name: sparseconv
 channels:
   - pytorch
   - intel
@@ -13,7 +13,6 @@ dependencies:
   - ca-certificates=2022.07.19=h06a4308_0
   - cairo=1.16.0=h18b612c_1001
   - certifi=2022.6.15=py38h06a4308_0
-  - django=3.2.5=pyhd3eb1b0_0
   - dpcpp-cpp-rt=2022.1.0=h06a4308_3768
   - dpcpp_cpp_rt=2023.0.0=intel_25370
   - flit-core=3.6.0=pyhd3eb1b0_0
@@ -87,7 +86,5 @@ dependencies:
   - xz=5.2.8=h5eee18b_0
   - zlib=1.2.13=h5eee18b_0
   - pip:
-    - django-ssl-auth==2.2.0
     - minkowskiengine==0.5.4
     - numpy==1.24.0
-prefix: /home/nsclweb/anaconda3/envs/puresnet
