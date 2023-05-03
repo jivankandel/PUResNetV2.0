@@ -2,14 +2,14 @@ from setuptools import setup,find_packages
 from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
-liscense=(this_directory / "LICENSE.txt").read_text()
+license=(this_directory / "LICENSE.txt").read_text()
 setup(
     name='puresnet',
     version='0.0.1',
     description='PUResNetV2.0 Prediction of Protein Ligand Binding Sites',
     long_description=long_description,
     long_description_content_type='text/markdown'
-    
+    license=license
     packages=find_packages(),
     install_requires=[
       'numpy'  
