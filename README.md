@@ -14,5 +14,5 @@ conda env create -f environment.yml ## If you want to use GPU version
 </pre>
 3. Install puresnet package from PyPI
 <pre>
-pip install puresnet==0.0.1
+pip install puresnet==1.0.0
 </pre>
