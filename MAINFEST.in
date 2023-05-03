@@ -1,1 +1,3 @@
 include puresnet/data/*
+include README.md
+include LICENSE.txt
