@@ -1,7 +1,7 @@
 from setuptools import setup,find_packages
 with open('README.md') as f:
     readme=f.read()
-with open('LICENSE') as f:
+with open('LICENSE.txt') as f:
     license=f.read()
 setup(
     name='puresnet',
