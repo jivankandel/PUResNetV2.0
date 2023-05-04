@@ -2,7 +2,7 @@
 Prediction of ligand binding site
 
 <h1>Usage</h1>
-1. Setup Environment
+# 1. Setup Environment
 <h2>Creating environment named sparseconv </h2>
 <pre>
 conda create -n sparseconv python=3.10 -c conda-forge
