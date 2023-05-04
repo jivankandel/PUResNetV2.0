@@ -2,19 +2,10 @@
 Prediction of ligand binding site
 
 <h1>Usage</h1>
-1. Clone this repository
-<pre>
-git clone https://github.com/jivankandel/PUResNetV2.0.git
-cd PUResNet
-</pre>
-2. Setup Environment
-
-<h1>Creating environment named {sparseconv} </h1>
+1. Setup Environment
+<h2>Creating environment named sparseconv </h2>
 <pre>
 conda create -n sparseconv python=3.10 -c conda-forge
-</pre>
-<h1> Activate the environment </h1>
-<pre>
 conda activate sparseconv
 </pre>
 conda install openblas-devel -c anaconda
