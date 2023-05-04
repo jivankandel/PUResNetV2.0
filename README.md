@@ -5,11 +5,11 @@ A powerful tool for predicting ligand binding sites in protein structures
 - [Overview](#overview)
 - [Usage](#usage)
   - [Setup Conda Environment](#setup-conda-environment)
-  - [Creating environment named sparseconv](#creating-environment-named-sparseconv)
-  - [Installing pytorch and cuda drivers](#installing-pytorch-and-cuda-drivers)
-  - [Installing MinkowskiEngine](#installing-minkowskiengine)
-  - [Installing other requirements](#installing-other-requirements)
-  - [Installing PUResNetV2.0 package](#installing-puresnetv20-package)
+    - [Creating environment named sparseconv](#creating-environment-named-sparseconv)
+    - [Installing pytorch and cuda drivers](#installing-pytorch-and-cuda-drivers)
+    - [Installing MinkowskiEngine](#installing-minkowskiengine)
+    - [Installing other requirements](#installing-other-requirements)
+    - [Installing PUResNetV2.0 package](#installing-puresnetv20-package)
 - [Getting Started](#getting-started)
 - [Example Usage](#example-usage)
 - [Citation](#citation)
@@ -22,32 +22,32 @@ PUResNetV2.0 is a state-of-the-art deep learning model designed to predict ligan
 
 ### Setup Conda Environment
 
-#### Creating environment named sparseconv
+##### Creating environment named sparseconv
 ```bash
 conda create -n sparseconv python=3.10 -c conda-forge
 conda activate sparseconv
 ```
 
-#### Installing pytorch and cuda drivers
+##### Installing pytorch and cuda drivers
 ```bash
 conda install openblas-devel -c anaconda
 conda install pytorch=1.13.0 torchvision=0.14 pytorch-cuda=11.7 -c pytorch -c nvidia
 conda install -c "nvidia/label/cuda-11.7.0" cuda-toolkit
 ```
 
-#### Installing MinkowskiEngine
+##### Installing MinkowskiEngine
 ```bash
 export CUDA_HOME=$CONDA_PREFIX
 pip install -U git+https://github.com/NVIDIA/MinkowskiEngine --no-deps
 ```
 
-#### Installing other requirements
+##### Installing other requirements
 ```bash
 conda install -c conda-forge openbabel
 conda install -c anaconda scikit-learn
 ```
 
-### Installing PUResNetV2.0 package
+##### Installing PUResNetV2.0 package
 ```bash
 pip install puresnet==1.0.0
 ```
