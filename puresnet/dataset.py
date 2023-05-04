@@ -33,9 +33,13 @@ def download_data():
                             break
                         target.write(chunk)
 class SparseDataset(Dataset):
-    def __init__(self,pdbs,set='Train'):
+    def __init__(self,path,pdbs=None,set='Train'):
         self.set=set
-        self.paths=pdbs
+        self.path=path
+        if not pdbs:
+            self.paths=os.listdir(self.path)
+        else:
+            self.paths=pdbs
         # Create matrices for all possible 90* rotations of a box
         self.ROTATIONS = [self.rotation_matrix([1, 1, 1], 0)]
 
@@ -134,9 +138,9 @@ class SparseDataset(Dataset):
     def __getitem__(self, idx):
         rot = int(np.random.choice(range(24)))
         x=self.paths[idx]
-        coords_path=os.path.join('sparse/',x,'coords.pt')
-        feature_path=os.path.join('sparse/',x,'feat.pt')
-        label_path=os.path.join('sparse/',x,'label.pt')
+        coords_path=os.path.join(self.path,x,'coords.pt')
+        feature_path=os.path.join(self.path,x,'feat.pt')
+        label_path=os.path.join(self.path,x,'label.pt')
         coords, feats = torch.load(coords_path).numpy(),torch.load(feature_path).numpy()
         labels = torch.load(label_path).numpy()
         if self.set=='Train':
@@ -152,9 +156,7 @@ class SparseDataset(Dataset):
         return len(self.paths)
 def custom_collation_fn(data_labels):
     coords, feats, labels = list(zip(*data_labels))
-    # Create batched coordinates for the SparseTensor input
     bcoords = ME.utils.batched_coordinates(coords)
-    # Concatenate all lists
     feats_batch = torch.from_numpy(np.concatenate(feats, 0)).float()
     labels_batch = torch.from_numpy(np.concatenate(labels, 0)).int()
 
@@ -162,8 +164,8 @@ def custom_collation_fn(data_labels):
 def get_trainVal():
     train_data = np.load(pkg_resources.resource_filename('puresnet', 'data/training_data.npy'))
     val_data= np.load(pkg_resources.resource_filename('puresnet', 'data/validation_data.npy'))
-    train_dataset=SparseDataset(train_data,set='Train')
-    val_dataset=SparseDataset(val_data,set='Val')
+    train_dataset=SparseDataset(path='sparse',pdbs=train_data,set='Train')
+    val_dataset=SparseDataset(path='sparse',pdbs=val_data,set='Val')
     return train_dataset,val_dataset
 
 def get_trainVal_loder(batch_size=80,num_workers=4):
