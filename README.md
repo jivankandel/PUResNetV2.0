@@ -1,4 +1,3 @@
-```
 # PUResNetV2.0
 A powerful tool for predicting ligand binding sites in protein structures
 
