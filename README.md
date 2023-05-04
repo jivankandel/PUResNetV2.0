@@ -57,9 +57,9 @@ After installing PUResNetV2.0, you can start predicting ligand binding sites for
 
 ## Example Usage
 Inside Example explore following notebook files:
-    1. Creating sparse tensor.ipynb
-    2. Predicting.ipynb
-    3. Training.ipynb
+1. Creating sparse tensor.ipynb
+2. Predicting.ipynb
+3. Training.ipynb
 ## Citation
 1. Kandel, J., Tayara, H. & Chong, K.T. PUResNet: prediction of protein-ligand binding sites using deep residual neural network. J Cheminform 13, 65 (2021). 
 https://doi.org/10.1186/s13321-021-00547-7
