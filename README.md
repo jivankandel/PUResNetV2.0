@@ -56,20 +56,10 @@ pip install puresnet==1.0.0
 After installing PUResNetV2.0, you can start predicting ligand binding sites for your protein structures. Follow the instructions in the [Example Usage](#example-usage) section to learn how to use the tool effectively.
 
 ## Example Usage
-To use PUResNetV2.0 for predicting ligand binding sites, follow the steps below:
-
-1. Prepare your protein structure in PDB format.
-
-2. Run the following command, replacing 'input.pdb' with the path to your protein structure file and 'output.txt' with the desired path for the output file:
-
-```bash
-puresnet predict -i input.pdb -o output.txt
-```
-
-3. The results will be saved in the specified output file. The output will contain the predicted binding site residues and their corresponding scores.
-
-For more information on additional options and parameters, refer to the [PUResNetV2.0 documentation](https://github.com/username/puresnet/wiki).
-
+Inside Example explore following notebook files:
+    1.Creating sparse tensor.ipynb
+    2.Predicting.ipynb
+    3.Training.ipynb
 ## Citation
 1. Kandel, J., Tayara, H. & Chong, K.T. PUResNet: prediction of protein-ligand binding sites using deep residual neural network. J Cheminform 13, 65 (2021). 
 https://doi.org/10.1186/s13321-021-00547-7
