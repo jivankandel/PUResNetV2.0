@@ -44,11 +44,15 @@ def validation(epoch_iterator_val,model,loss_function,device):
             total_loss+=loss.item()
     return total_dice/len(epoch_iterator_val),roc_auc/len(epoch_iterator_val),f1_score/len(epoch_iterator_val),total_loss/len(epoch_iterator_val)
 
-def train(path_to_save,device):
-    if not device=='cpu':
+def train(path_to_save,device,dataset_path='sparse'):
+    if torch.cuda.is_available() and device!='cpu':
         os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
         os.environ["CUDA_VISIBLE_DEVICES"]=f"{device}"
         device='cuda'
+    else:
+        device='cpu'
+    if not os.path.exists(path_to_save):
+        os.mkdir(path_to_save)
     prev_loss=1000000
     count=0
     step=0
@@ -58,7 +62,7 @@ def train(path_to_save,device):
     model=get_model()
     model.to(device)
     optimizer = AdamW(model.parameters(), lr=0.000789)
-    train_dataloader,test_dataloder=get_trainVal_loder()
+    train_dataloader,test_dataloder=get_trainVal_loder(dataset_path)
     with open(path_to_save+'/'+'training.txt',mode='a') as f:
         f.write('Epoch,Training_Loss,Validation_loss,Training_PRC,Validation_PRC,Validation_ROC,Validation_F1score\n')
     

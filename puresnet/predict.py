@@ -79,10 +79,12 @@ def make_prediction(pdb_path,rscb=False,uniprot=False,chain=[],mode='A',device='
     '''
     assert mode in ['A','B','C'], f'Invalid mode {mode}'
     assert isinstance(chain,str) or isinstance(chain,list), f'Chain should be either string or list passed {type(chain)}'
-    if not device=='cpu':
+    if torch.cuda.is_available() and device!='cpu':
         os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
         os.environ["CUDA_VISIBLE_DEVICES"]=f"{device}"
         device='cuda'
+    else:
+        device='cpu'
     model=get_trained_model()
     model=model.eval()
     model=model.to(device)

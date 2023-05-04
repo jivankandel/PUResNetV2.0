@@ -36,7 +36,7 @@ class SparseDataset(Dataset):
     def __init__(self,path,pdbs=None,set='Train'):
         self.set=set
         self.path=path
-        if pdbs==None:
+        if pdbs is None:
             self.paths=os.listdir(self.path)
         else:
             self.paths=pdbs
@@ -161,15 +161,15 @@ def custom_collation_fn(data_labels):
     labels_batch = torch.from_numpy(np.concatenate(labels, 0)).int()
 
     return bcoords, feats_batch, labels_batch
-def get_trainVal():
+def get_trainVal(path='sparse'):
     train_data = np.load(pkg_resources.resource_filename('puresnet', 'data/training_data.npy'))
     val_data= np.load(pkg_resources.resource_filename('puresnet', 'data/validation_data.npy'))
-    train_dataset=SparseDataset(path='sparse',pdbs=train_data,set='Train')
-    val_dataset=SparseDataset(path='sparse',pdbs=val_data,set='Val')
+    train_dataset=SparseDataset(path=path,pdbs=train_data,set='Train')
+    val_dataset=SparseDataset(path=path,pdbs=val_data,set='Val')
     return train_dataset,val_dataset
 
-def get_trainVal_loder(batch_size=80,num_workers=4):
-    train_dataset,val_dataset=get_trainVal()
+def get_trainVal_loder(path='sparse',batch_size=80,num_workers=4):
+    train_dataset,val_dataset=get_trainVal(path=path)
     train_loder=DataLoader(
     train_dataset, batch_size=batch_size,shuffle=True,pin_memory=True,collate_fn=custom_collation_fn,num_workers=num_workers)
     val_loder=DataLoader(
