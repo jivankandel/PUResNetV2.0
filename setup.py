@@ -5,7 +5,7 @@ long_description = (this_directory / "README.md").read_text()
 license=(this_directory / "LICENSE.txt").read_text()
 setup(
     name='puresnet',
-    version='1.0.0',
+    version='0.1',
     description='PUResNetV2.0 Prediction of Protein Ligand Binding Sites',
     long_description=long_description,
     long_description_content_type='text/markdown',

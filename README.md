@@ -49,7 +49,7 @@ conda install -c anaconda scikit-learn
 
 ##### Installing PUResNetV2.0 package
 ```bash
-pip install puresnet==1.0.0
+pip install puresnet==0.1
 ```
 
 ## Getting Started
