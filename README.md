@@ -71,9 +71,8 @@ puresnet predict -i input.pdb -o output.txt
 For more information on additional options and parameters, refer to the [PUResNetV2.0 documentation](https://github.com/username/puresnet/wiki).
 
 ## Citation
-If you use PUResNetV2.0 in your research, please cite the following paper:
-
-_TODO: Add citation information._
+1. Kandel, J., Tayara, H. & Chong, K.T. PUResNet: prediction of protein-ligand binding sites using deep residual neural network. J Cheminform 13, 65 (2021). 
+https://doi.org/10.1186/s13321-021-00547-7
 
 ## License
 MIT License
