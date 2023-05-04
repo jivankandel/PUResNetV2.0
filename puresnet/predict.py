@@ -91,11 +91,20 @@ def make_prediction(pdb_path,rscb=False,uniprot=False,chain=[],mode='A',device='
     pdb_name=os.path.basename(pdb_path)
     v_dict,chains=get_data(pdb_file=pdb_path,rscb=rscb,uniprot=uniprot)
     if mode=='A':
-        save_predictions(v_dict,pdb_name=pdb_name,chain=chains,model=model,device=device)
+        try:
+            save_predictions(v_dict,pdb_name=pdb_name,chain=chains,model=model,device=device)
+        except:
+            pass
     elif mode=='B':
         for ch in chains:
-           save_predictions(v_dict,pdb_name=pdb_name,chain=ch,model=model,device=device) 
+            try:
+                save_predictions(v_dict,pdb_name=pdb_name,chain=ch,model=model,device=device)
+            except Exception:
+                pass
     elif mode=='C':
-        save_predictions(v_dict,pdb_name=pdb_name,chain=chain,model=model,device=device)
+        try:
+            save_predictions(v_dict,pdb_name=pdb_name,chain=chain,model=model,device=device)
+        except Exception:
+            pass
 
 
