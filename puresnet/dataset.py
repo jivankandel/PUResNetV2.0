@@ -36,7 +36,7 @@ class SparseDataset(Dataset):
     def __init__(self,path,pdbs=None,set='Train'):
         self.set=set
         self.path=path
-        if not pdbs:
+        if pdbs==None:
             self.paths=os.listdir(self.path)
         else:
             self.paths=pdbs
