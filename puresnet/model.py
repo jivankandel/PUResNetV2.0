@@ -3,7 +3,7 @@ import torch.nn as nn
 from .resnet import ResNetBase
 from MinkowskiEngine.modules.resnet_block import BasicBlock
 import pkg_resources
-
+import torch
 class PUResNetV2(ResNetBase):
     DILATIONS = (1, 1, 1, 1, 1, 1, 1, 1)
     INIT_DIM = 32
@@ -148,7 +148,7 @@ def get_trained_model():
     planes=(32,48,128,128,128,128,48,32)
     layers=(2,3,1,3,3,2,1,3)
     net = PUResNetV2(in_channels=18, out_channels=1,D=3,p=p,block=block,layers=layers,planes=planes)
-    net.load_state_dict(ME.torch.load(model_path))
+    net.load_state_dict(ME.torch.load(model_path),map_location=torch.device('cpu'))
     return net.eval()
 def get_model():
     p=0.11
