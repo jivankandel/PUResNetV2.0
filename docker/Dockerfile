@@ -33,6 +33,13 @@ RUN conda install -c conda-forge openbabel
 RUN conda install -y -c conda-forge jupyterlab tqdm
 RUN conda install -c anaconda scikit-learn
 RUN pip install puresnet==0.1
-COPY Example /home/Example
-WORKDIR /home/Example
+
+
+# Create a work directory for the mounted volume
+RUN mkdir /work
+# Copy the example files to the container
+COPY Example /Example
+# Expose the default JupyterLab port
+EXPOSE 8888
+
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]

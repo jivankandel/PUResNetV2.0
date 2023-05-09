@@ -73,14 +73,14 @@ docker pull jivankandel/puresnet:latest
 2. Run the Docker container, exposing the JupyterLab port (8888) and enabling GPU access:
 
 ```bash
-docker run --gpus all -p 8888:8888 -v /path/to/local/folder:/home/workdir jivankandel/puresnet:latest
+docker run --gpus all -it --user root -p 8888:8888 -v "$(pwd)":/work --workdir /work jivankandel/puresnet:latest
 ```
 
-Replace `/path/to/local/folder` with the path to a folder on your local machine where you want to store your notebooks and data.
+GOTO folder on your local machine where you want to store your notebooks and data and run above command.
 
 To run Examples
 ```bash
-docker run --gpus all -p 8888:8888  jivankandel/puresnet:latest
+docker run --gpus all -it --user root -p 8888:8888 --workdir /Example jivankandel/puresnet:latest
 ```
 
 3. Open your web browser and navigate to `http://localhost:8888`. JupyterLab should be running without requiring any authentication.
