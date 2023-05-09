@@ -10,7 +10,7 @@ A powerful tool for predicting ligand binding sites in protein structures
         - [Installing MinkowskiEngine](#installing-minkowskiengine)
         - [Installing other requirements](#installing-other-requirements)
         - [Installing PUResNetV2.0 package](#installing-puresnetv20-package)
-    -[Setup Docker](#setup-docker)
+    - [Setup Docker](#setup-docker)
 - [Getting Started](#getting-started)
 - [Example Usage](#example-usage)
 - [Citation](#citation)
