@@ -66,22 +66,22 @@ This Docker image provides a ready-to-use JupyterLab environment with CUDA, PyTo
 
 1. Pull the Docker image from Docker Hub:
 
-\`\`\`bash
+```bash
 docker pull jivankandel/puresnet:latest
-\`\`\`
+```
 
 2. Run the Docker container, exposing the JupyterLab port (8888) and enabling GPU access:
 
-\`\`\`bash
+```bash
 docker run --gpus all -p 8888:8888 -v /path/to/local/folder:/home/workdir jivankandel/puresnet:latest
-\`\`\`
+```
 
 Replace `/path/to/local/folder` with the path to a folder on your local machine where you want to store your notebooks and data.
 
 To run Examples
-\`\`\`bash
+```bash
 docker run --gpus all -p 8888:8888  jivankandel/puresnet:latest
-\`\`\`
+```
 
 3. Open your web browser and navigate to `http://localhost:8888`. JupyterLab should be running without requiring any authentication.
 
@@ -89,15 +89,15 @@ docker run --gpus all -p 8888:8888  jivankandel/puresnet:latest
 
 To stop the running Docker container, find the container ID using the following command:
 
-\`\`\`bash
+```bash
 docker ps
-\`\`\`
+```
 
 Take note of the `CONTAINER ID` corresponding to your running image. Then, stop the container using the following command:
 
-\`\`\`bash
+```bash
 docker stop <container_id>
-\`\`\`
+```
 
 Replace `<container_id>` with the appropriate `CONTAINER ID` from the previous step.
 
