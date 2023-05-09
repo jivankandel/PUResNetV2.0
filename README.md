@@ -53,16 +53,16 @@ conda install -c anaconda scikit-learn
 pip install puresnet==0.1
 ```
 ### Setup Docker
-#### JupyterLab with CUDA, PyTorch, and Python 3.10
+##### JupyterLab with CUDA, PyTorch, and Python 3.10
 
 This Docker image provides a ready-to-use JupyterLab environment with CUDA, PyTorch, and Python 3.10.
 
-#### Prerequisites
+##### Prerequisites
 
 - Docker installed on your system (https://docs.docker.com/get-docker/)
 - NVIDIA GPU with compatible CUDA drivers (https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
 
-#### How to Run the Docker Image
+##### How to Run the Docker Image
 
 1. Pull the Docker image from Docker Hub:
 
@@ -85,7 +85,7 @@ docker run --gpus all -p 8888:8888  jivankandel/puresnet:latest
 
 3. Open your web browser and navigate to `http://localhost:8888`. JupyterLab should be running without requiring any authentication.
 
-#### Stopping the Docker Container
+##### Stopping the Docker Container
 
 To stop the running Docker container, find the container ID using the following command:
 
