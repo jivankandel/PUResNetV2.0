@@ -35,4 +35,4 @@ RUN conda install -c anaconda scikit-learn
 RUN pip install puresnet==0.1
 COPY Example /home/Example
 WORKDIR /home/Example
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]

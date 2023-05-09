@@ -4,12 +4,13 @@ A powerful tool for predicting ligand binding sites in protein structures
 ## Table of Contents
 - [Overview](#overview)
 - [Usage](#usage)
-  - [Setup Conda Environment](#setup-conda-environment)
-    - [Creating environment named sparseconv](#creating-environment-named-sparseconv)
-    - [Installing pytorch and cuda drivers](#installing-pytorch-and-cuda-drivers)
-    - [Installing MinkowskiEngine](#installing-minkowskiengine)
-    - [Installing other requirements](#installing-other-requirements)
-    - [Installing PUResNetV2.0 package](#installing-puresnetv20-package)
+    - [Setup Conda Environment](#setup-conda-environment)
+        - [Creating environment named sparseconv](#creating-environment-named-sparseconv)
+        - [Installing pytorch and cuda drivers](#installing-pytorch-and-cuda-drivers)
+        - [Installing MinkowskiEngine](#installing-minkowskiengine)
+        - [Installing other requirements](#installing-other-requirements)
+        - [Installing PUResNetV2.0 package](#installing-puresnetv20-package)
+    -[Setup Docker](#setup-docker)
 - [Getting Started](#getting-started)
 - [Example Usage](#example-usage)
 - [Citation](#citation)
@@ -51,6 +52,55 @@ conda install -c anaconda scikit-learn
 ```bash
 pip install puresnet==0.1
 ```
+### Setup Docker
+#### JupyterLab with CUDA, PyTorch, and Python 3.10
+
+This Docker image provides a ready-to-use JupyterLab environment with CUDA, PyTorch, and Python 3.10.
+
+#### Prerequisites
+
+- Docker installed on your system (https://docs.docker.com/get-docker/)
+- NVIDIA GPU with compatible CUDA drivers (https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
+
+#### How to Run the Docker Image
+
+1. Pull the Docker image from Docker Hub:
+
+\`\`\`bash
+docker pull jivankandel/puresnet:latest
+\`\`\`
+
+2. Run the Docker container, exposing the JupyterLab port (8888) and enabling GPU access:
+
+\`\`\`bash
+docker run --gpus all -p 8888:8888 -v /path/to/local/folder:/home/workdir jivankandel/puresnet:latest
+\`\`\`
+
+Replace `/path/to/local/folder` with the path to a folder on your local machine where you want to store your notebooks and data.
+
+To run Examples
+\`\`\`bash
+docker run --gpus all -p 8888:8888  jivankandel/puresnet:latest
+\`\`\`
+
+3. Open your web browser and navigate to `http://localhost:8888`. JupyterLab should be running without requiring any authentication.
+
+#### Stopping the Docker Container
+
+To stop the running Docker container, find the container ID using the following command:
+
+\`\`\`bash
+docker ps
+\`\`\`
+
+Take note of the `CONTAINER ID` corresponding to your running image. Then, stop the container using the following command:
+
+\`\`\`bash
+docker stop <container_id>
+\`\`\`
+
+Replace `<container_id>` with the appropriate `CONTAINER ID` from the previous step.
+
 
 ## Getting Started
 After installing PUResNetV2.0, you can start predicting ligand binding sites for your protein structures. Follow the instructions in the [Example Usage](#example-usage) section to learn how to use the tool effectively.
