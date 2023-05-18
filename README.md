@@ -1,5 +1,5 @@
 # PUResNetV2.0
-A powerful tool for predicting ligand binding sites in protein structures
+A powerful tool for predicting ligand binding sites in protein structures. Webserver Available at https://nsclbio.jbnu.ac.kr/tools/jmol/
 
 ## Table of Contents
 - [Overview](#overview)
