@@ -113,6 +113,7 @@ Inside Example explore following notebook files:
 ## Citation
 1. Kandel, J., Tayara, H. & Chong, K.T. PUResNet: prediction of protein-ligand binding sites using deep residual neural network. J Cheminform 13, 65 (2021). 
 https://doi.org/10.1186/s13321-021-00547-7
+2. Jeevan, K., Palistha, S., Tayara, H. et al. PUResNetV2.0: a deep learning model leveraging sparse representation for improved ligand binding site prediction. J Cheminform 16, 66 (2024). https://doi.org/10.1186/s13321-024-00865-6
 
 ## License
 MIT License
