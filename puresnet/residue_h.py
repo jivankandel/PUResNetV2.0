@@ -25,13 +25,13 @@ def get_residue(residue_name):
     if residue_name+'.cif' not in os.listdir(ch_path+'/residues'):
         cmd1='wget '+url+' -O '+ch_path+'/residues/'+residue_name+'.cif'+' >/dev/null 2>&1'
         os.system(cmd1)
-    if residue_name+'.sdf' not in os.listdir(ch_path+'/residues'):
-        cmd2='wget '+url2+' -O '+ch_path+'/residues/'+residue_name+'.sdf'+' >/dev/null 2>&1'
+    if residue_name+'_ideal.sdf' not in os.listdir(ch_path+'/residues'):
+        cmd2='wget '+url2+' -O '+ch_path+'/residues/'+residue_name+'_ideal.sdf'+' >/dev/null 2>&1'
         os.system(cmd2)
     tabular_format=False
     loop_count=0
     temp=None
-    mol=next(pybel.readfile('sdf',ch_path+'/residues/'+residue_name+'.sdf'))
+    mol=next(pybel.readfile('sdf',ch_path+'/residues/'+residue_name+'_ideal.sdf'))
     feat=feature.get_features(mol)
     f=open(ch_path+'/residues/'+residue_name+'.cif','r')
     for i,lines in enumerate(f):
