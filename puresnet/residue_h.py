@@ -16,7 +16,7 @@ def is_standard(obj):
 def res_iter(obj):
     return (x for x in vars(obj).values() if type(x)==type(atom()))
 def get_url(residue):
-    return 'https://files.rcsb.org/ligands/download/'+residue+'_model.sdf'
+    return 'https://files.rcsb.org/ligands/download/'+residue+'_ideal.sdf'
 def get_residue(residue_name):
     residue_name=residue_name.upper().strip()
     url=' https://files.rcsb.org/ligands/download/'+residue_name+'.cif'
